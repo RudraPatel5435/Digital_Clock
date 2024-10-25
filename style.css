@@ -1,0 +1,8 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(45deg, #08001f, #30197d);
+}
