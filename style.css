@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "ClickClock";
+    src: url(Fonts/ClickClock.otf);
+}
+@font-face {
+    font-family: "Square Sans Serif";
+    src: url(Fonts/square_sans_serif_7.ttf);
+}
+@font-face {
+    font-family: "Digital Dream";
+    src: url(Fonts/DIGITALDREAM.ttf);
+}
 *, *::before, *::after {
     padding: 0;
     margin: 0;
@@ -5,4 +17,53 @@
 }
 body{
     background: linear-gradient(45deg, #08001f, #30197d);
+    color: black;
+    position: relative;
+} 
+.container{
+    height: 400px;
+    width: 800px;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.clock {
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    backdrop-filter: blur(30px);
+    background-color: rgba(135, 206, 235, 0.11);
+}
+span{
+    color: rgb(191, 255, 255);
+    font-size: 100px;
+}
+#date, #timezone {
+    font-size: 50px;
+}
+/* #date, #timezone, .time {
+    font-family: "Square Sans Serif 7";
+} */
+.fonts{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fonts span{
+    font-size: 35px;
+}
+.date{
+    margin-top: 30px;
+}
+.timezone{
+    margin-bottom: 30px;
+}
+.font1, .font2, .font3 {
+    cursor: pointer;
 }
