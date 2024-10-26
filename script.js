@@ -27,6 +27,8 @@ var seconds = document.querySelector("#seconds")
 var datespan = document.querySelector("#date")
 var timeZonespan = document.querySelector("#timezone")
 var dayspan = document.querySelector("#day")
+var afterGood = document.querySelector("#afterGood")
+var addTask = document.querySelector(".icon")
 setInterval(()=>{
     let curr = new Date()
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
@@ -47,4 +49,19 @@ setInterval(()=>{
     timeZonespan.innerText = timeZone
     dayspan.innerText = `${day}`
 
+    if (hour<12 || hour==24){
+        afterGood.innerText = "Morning"
+    }
+    else if (hour>=12 && hour<17){
+        afterGood.innerText = "Afternoon"
+    }
+    else if (hour>=17 && hour<24){
+        afterGood.innerText = "Evening"
+    }
+
 }, 1000)
+
+
+addTask.addEventListener("click", () => {
+
+})

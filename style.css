@@ -2,6 +2,10 @@
     font-family: ClickClock;
     src: url(Fonts/ClickClock.otf);
 }
+@font-face {
+    font-family: "GoodMorning";
+    src: url(Fonts/Good\ Morning.ttf);
+}
 *, *::before, *::after {
     padding: 0;
     margin: 0;
@@ -13,8 +17,16 @@ body{
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 } 
+
+.greeting {
+    font-size: 47px;
+    margin-top: -100px;
+    margin: 20px;
+    font-family: "GoodMorning";
+}
+
 .container{
     height: 400px;
     width: 800px;
@@ -23,6 +35,29 @@ body{
     top:50%;
     transform: translate(-50%,-50%);
     font-family: "ClickClock";
+}
+.container::before{
+    content:'';
+    height: 300px;
+    width: 300px;
+    background-color: cornflowerblue;
+    position: absolute;
+    z-index: -1;
+    border-radius: 20px;
+    left: -120px;
+    bottom: -120px;
+}
+.container::after{
+    content:'';
+    height: 330px;
+    width: 330px;
+    background-color: tan;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    right: -120px;
+    top: -120px;
+
 }
 .clock {
     border-radius: 30px;
@@ -49,4 +84,34 @@ body{
 }
 .timezone{
     margin-bottom: 30px;
+}
+
+.todolist {
+    padding: 10px;
+    color: greenyellow;
+    height: 500px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(30px);
+    border-radius: 20px;
+    margin: 20px 20px 0 0;
+}
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.head h1{
+    font-size: 35px;
+}
+.head .icon{
+    font-size: 35px;
+    border: 4px solid yellowgreen;
+    border-radius: 30%;
+    cursor: pointer;
+}
+.separate{
+    margin: 15px;
+    border: 1px solid yellowgreen;
+    background-color: yellowgreen;
 }
