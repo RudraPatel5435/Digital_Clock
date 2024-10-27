@@ -24,7 +24,7 @@ body{
     font-size: 47px;
     margin-top: -100px;
     margin: 20px;
-    font-family: "GoodMorning";
+    font-family: "GoodMorning", "ClickClock";
 }
 
 .container{
@@ -87,7 +87,7 @@ body{
 }
 
 .todolist {
-    padding: 10px;
+    padding: 20px;
     color: greenyellow;
     height: 500px;
     width: 300px;
@@ -95,6 +95,7 @@ body{
     backdrop-filter: blur(30px);
     border-radius: 20px;
     margin: 20px 20px 0 0;
+    overflow-y: scroll;
 }
 .head{
     display: flex;
@@ -114,4 +115,24 @@ body{
     margin: 15px;
     border: 1px solid yellowgreen;
     background-color: yellowgreen;
+}
+li{
+    margin: 10px 0 0 20px;
+}
+li::marker{
+    font-size: 20px;
+    font-weight: 700;
+}
+input {
+    color: black;
+    border-radius: 3px;
+    font-size: 20px;
+    border: none;
+    background-color: white;
+}
+.list i{
+    color: lightgreen;
+    font-size: 22px;
+    margin-left: 10px;
+    cursor: pointer;
 }

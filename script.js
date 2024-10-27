@@ -61,7 +61,18 @@ setInterval(()=>{
 
 }, 1000)
 
+var allTasks = document.querySelector("ol")
 
+let num = 1;
 addTask.addEventListener("click", () => {
-
+    let newTask = document.createElement("li")
+    newTask.className = `${num}`
+    let newTaskText = document.createElement("input")
+    let check = document.createElement("i")
+    check.className = "ri-checkbox-fill"
+    check.id = `${num}`
+    newTask.appendChild(newTaskText)
+    newTask.appendChild(check)
+    allTasks.appendChild(newTask)
+    num+=1
 })
