@@ -9,8 +9,8 @@
         <h3>Good</h3>
         <h3 id="afterGood"></h3>
     </div>
-
-
+    
+    
     <div class="container">
         <div class="clock">
             <div class="date">
@@ -29,19 +29,15 @@
             </div>
         </div>
     </div>
-
-
-    <div class="todolist">
-        <div class="head">
-            <h1>To-Do List</h1>
-            <div class="icon"><i class="ri-add-fill"></i></div>
+    
+    
+    <div class="todoContainer">
+        <h2>To-Do List <img  src="Images/icon.png"></h2>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your task">
+            <button onclick="addTask()">Add</button>
         </div>
-        <hr class="separate">
-        <div class="list">
-            <ol>
-                <li><input><i class="ri-checkbox-fill"></i></li>
-            </ol>
-        </div>
+        <ul id="list-container"></ul>
     </div>
     
     <script src="script.js"></script>

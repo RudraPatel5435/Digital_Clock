@@ -1,5 +1,5 @@
 @font-face {
-    font-family: ClickClock;
+    font-family: "ClickClock";
     src: url(Fonts/ClickClock.otf);
 }
 @font-face {
@@ -86,53 +86,93 @@ body{
     margin-bottom: 30px;
 }
 
-.todolist {
-    padding: 20px;
-    color: greenyellow;
+.todoContainer{
+    font-family: "Gillsans";
+    padding: 40px 30px 70px;
     height: 500px;
     width: 300px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(30px);
     border-radius: 20px;
     margin: 20px 20px 0 0;
     overflow-y: scroll;
 }
-.head{
+.todoContainer h2{
+    color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.todoContainer h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    width: 220px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
 }
-.head h1{
-    font-size: 35px;
-}
-.head .icon{
-    font-size: 35px;
-    border: 4px solid yellowgreen;
-    border-radius: 30%;
-    cursor: pointer;
-}
-.separate{
-    margin: 15px;
-    border: 1px solid yellowgreen;
-    background-color: yellowgreen;
-}
-li{
-    margin: 10px 0 0 20px;
-}
-li::marker{
-    font-size: 20px;
-    font-weight: 700;
-}
-input {
-    color: black;
-    border-radius: 3px;
-    font-size: 20px;
+input{
     border: none;
-    background-color: white;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
 }
-.list i{
-    color: lightgreen;
-    font-size: 22px;
-    margin-left: 10px;
+button{
+    margin-left: -25px;
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    background: #c74636;
+    color: #fff;
+    font-size: 16px;
     cursor: pointer;
+    border-radius: 40px;
+}
+ul li{
+    color: white;
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: url(Images/unchecked.png);
+    background-position: center;
+    top: 8px;
+    left: 8px;
+    background-size: contain;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background: url(Images/checked.png);
+    background-size: contain;
+}
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 5px;
+    color: #555;
+}
+ul li span:hover {
+    background: #edeef0 ;
 }

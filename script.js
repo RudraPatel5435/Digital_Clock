@@ -28,7 +28,6 @@ var datespan = document.querySelector("#date")
 var timeZonespan = document.querySelector("#timezone")
 var dayspan = document.querySelector("#day")
 var afterGood = document.querySelector("#afterGood")
-var addTask = document.querySelector(".icon")
 setInterval(()=>{
     let curr = new Date()
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
@@ -61,18 +60,38 @@ setInterval(()=>{
 
 }, 1000)
 
-var allTasks = document.querySelector("ol")
+const inputBox = document.getElementById("input-box")
+const listContainer = document.getElementById("list-container")
 
-let num = 1;
-addTask.addEventListener("click", () => {
-    let newTask = document.createElement("li")
-    newTask.className = `${num}`
-    let newTaskText = document.createElement("input")
-    let check = document.createElement("i")
-    check.className = "ri-checkbox-fill"
-    check.id = `${num}`
-    newTask.appendChild(newTaskText)
-    newTask.appendChild(check)
-    allTasks.appendChild(newTask)
-    num+=1
+function addTask() {
+    if(inputBox.value === ""){
+        alert("You must write something!")
+    }
+    else {
+        let li = document.createElement("li");
+        li.innerHTML=inputBox.value;
+        listContainer.appendChild(li);
+        let span = document.createElement("span")
+        span.classList = "ri-close-fill"
+        li.appendChild(span)
+    }
+    inputBox.value=""
+    saveData()
+}
+
+listContainer.addEventListener("click", function(e){
+    if(e.target.tagName === "LI"){
+        e.target.classList.toggle("checked")
+        saveData()
+    }
+    else if (e.target.tagName === "SPAN"){
+        e.target.parentElement.remove()
+        saveData()
+    }
 })
+
+function saveData(){
+    localStorage.setItem("data", listContainer.innerHTML)
+}
+
+listContainer.innerHTML = localStorage.getItem("data")
